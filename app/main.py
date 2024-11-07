@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
-from app.routes.category import category_router
-from app.routes.location import location_router
-from app.routes.recommender import recommender_router
+from app.routes.category_routes import category_router
+from app.routes.location_routes import location_router
+from app.routes.recommendations_router import recommender_router
 
 app = FastAPI()
 
