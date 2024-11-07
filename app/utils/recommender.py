@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from app.database import locations_collection, categories_collection, reviews_collection
+from app.database import categories_collection, locations_collection, reviews_collection
 
 
 async def get_unreviewed_combinations():
@@ -12,10 +12,7 @@ async def get_unreviewed_combinations():
 
     for location in locations:
         for category in categories:
-            review = await reviews_collection.find_one({
-                "location_id": location["_id"],
-                "category_id": category["_id"]
-            })
+            review = await reviews_collection.find_one({"location_id": location["_id"], "category_id": category["_id"]})
             if not review or (review["last_reviewed"] < recent_threshold):
                 unreviewed.append({"location_id": location["_id"], "category_id": category["_id"]})
 

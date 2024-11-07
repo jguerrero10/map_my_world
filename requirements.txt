@@ -1,4 +1,9 @@
+httpx
 motor~=3.6.0
+pre-commit
 pydantic~=2.9.2
+pytest
+pytest-asyncio
+pytest-cov
 uvicorn
 fastapi~=0.115.4
