@@ -8,3 +8,7 @@ db = client.map_my_world
 locations_collection = db.locations
 categories_collection = db.categories
 reviews_collection = db.location_category_reviews
+
+
+def get_reviews_collection():
+    return reviews_collection
